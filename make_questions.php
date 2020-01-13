@@ -55,7 +55,7 @@ $res3 = mysqli_query($con, $q2);
 
 $res4 = mysqli_query($con , $q3);
 
-echo ."<br>".$res3." ".$res4;
+echo "<br>".$res3." ".$res4;
 
 ?>
 
