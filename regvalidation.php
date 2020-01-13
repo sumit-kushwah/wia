@@ -36,7 +36,7 @@ echo "</br>".$nor;
 
 if($nor >= 1)
 {
-	// echo "you are already registered";
+	echo "you are already registered";
 	header('location:register.php');
 }
 else
