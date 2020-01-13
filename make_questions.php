@@ -5,9 +5,11 @@
 	session_start();
 
 	
-$con= mysqli_connect('us-cdbr-iron-east-05.cleardb.net','bf807555e0b567','23a6fcff');
+$con= mysqli_connect("$db_host","$db_user","$db_pass");
 
-mysqli_select_db($con,'heroku_77d113432e16e60');
+mysqli_select_db($con,"$db_name");
+
+
 
 	if($con)
  {
