@@ -44,7 +44,7 @@ else
 	$q2= "insert into students (stname, stquizname, stemail, strollno) values ('$name' , '$quizcode' , '$email' , '$rollno')";
 	$res2 = mysqli_query($con,$q2);
 	$_SESSION['message'] = "you are registered now you can login";
-	header('location:home_page.php');
+	header('location:index.php');
 
 	?>
 
