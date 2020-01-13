@@ -1,5 +1,5 @@
 <?php 
-include('config.php');
+include 'config.php';
 session_start();
 
 $con= mysqli_connect('$db_host','$db_user','$db_pass');
