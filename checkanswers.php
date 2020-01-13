@@ -1,5 +1,5 @@
 <?php 
-
+include('config.php');
 session_start();
 
 if (!isset($_SESSION['rollno'])) {
@@ -37,9 +37,9 @@ if (!isset($_SESSION['rollno'])) {
 
 <?php
 
-$con= mysqli_connect('localhost','root');
+$con= mysqli_connect('$db_host','$db_user','$db_pass');
 
-mysqli_select_db($con,'wia');
+mysqli_select_db($con,'$db_name');
 
 if(isset($_POST['submit'])){
 	if(!empty($_POST['quizcheck'])){

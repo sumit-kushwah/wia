@@ -1,8 +1,11 @@
 <?php 
-
+include('config.php');
 session_start();
 
-$con = mysqli_connect('localhost','root');
+
+$con= mysqli_connect('$db_host','$db_user','$db_pass');
+
+mysqli_select_db($con,'$db_name');
 
  if($con)
  {
@@ -13,7 +16,7 @@ $con = mysqli_connect('localhost','root');
  	echo "connection failed";
  }
 
-mysqli_select_db($con,'wia');
+
 
 $name= $_POST['name'];
 $quizcode = $_POST['quizcode'];
