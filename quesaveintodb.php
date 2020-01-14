@@ -26,31 +26,37 @@ $quizname= $_SESSION['quizcode'];
 
 $qans = $quizname."ans";
 
+$numopt =sizeof($opt);
+$numques =sizeof($ques);
 
+echo "<br>";
+echo "$numopt $numques <br>";
 
 for($i = 0 ; $i < sizeof($ques); $i++) {
 
-	$optcal = 2*$i + $cans[$i];
+	$optcal = $numopt*$i + $cans[$i];
 
+	echo "$ques[$i] $optcal"."<br>";
 	$q= "insert into $quizname (qtext , correctans) values ('$ques[$i]' , '$optcal')  ";
 
 	$res = mysqli_query($con, $q);
 	
 }
 
-echo sizeof($opt);
-echo sizeof($ques);
+
 
 for ($i=0; $i < sizeof($opt); $i++) { 
 	# code...
-	$temp = (int)(($i)/sizeof($ques) ) +1;
+	$temp = (int)(($i)/$numopt) +1;
 	
 	echo $temp;
-	$q= "insert into $qans (cans , qid) values ('$opt[$i]' , $temp)  ";
+	$q= " insert into $qans (cans , qid) values ('$opt[$i]' , $temp)  ";
 		$res = mysqli_query($con, $q);
 }
 
 
+// session_destroy();
 
+// header('location:index.php');
 
  ?>

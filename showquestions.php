@@ -6,14 +6,14 @@ $con= mysqli_connect("$db_host","$db_user","$db_pass");
 
 mysqli_select_db($con,"$db_name");
 
-	if($con)
- {
- 	echo "connection succesful";
- }
- else
- {
- 	echo "connection failed";
- }
+	// if($con)
+ // {
+ // 	echo "connection succesful";
+ // }
+ // else
+ // {
+ // 	echo "connection failed";
+ // }
 
 
 
@@ -57,7 +57,7 @@ var timerId = setInterval(function(){
   var sec = Math.floor((countdown - (min * 60 * 1000)) / 1000);  //correct
 
   if (countdown <= 0) {
-     alert("30 min!");
+     alert("quiz finished");
      clearInterval(timerId);
      //doSomething();
   } else {
@@ -78,12 +78,12 @@ var timerId = setInterval(function(){
 		</div>
 
 		
-		
+	<!-- 	
 		<div class=" text-center shadow upstick"  >
 			<h3 style="padding: 20px" > Time Left: <span id='timer'></span></h3>
 
 			
-		</div>
+		</div> -->
 	
 	<?php 
 
@@ -97,8 +97,12 @@ var timerId = setInterval(function(){
 			
 	 ?>
 
-	 <div class="shadow" >
-	 	<h3 style="padding: 20px">NOTE : you have <?php echo $timelimit; ?> minutes to solve all <?php echo "$num" ?> problems.</h3>
+	 <div class="shadow text-center" >
+	 	
+			<h3 style="padding: 20px" > Time Left: <span id='timer'></span></h3>
+
+			
+		
 	 </div>
 
 <form action="checkanswers.php" method="post">
@@ -118,6 +122,7 @@ $i=1;
 
 				<?php 
 
+					$ss=(int)($i/10);
 					$qy = " select * from $qans where qid= $i";
 
 					$quer = mysqli_query($con,$qy);

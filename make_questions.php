@@ -4,6 +4,7 @@
 	include 'config.php';
 	session_start();
 
+
 	
 $con= mysqli_connect("$db_host","$db_user","$db_pass");
 
@@ -46,7 +47,7 @@ $q2 = " insert into teacher (tname, tcodename ,tquenum , toptnum , ttimelimit ) 
 $res2 = mysqli_query($con,$q2);
 
 echo "saved into database";
-$q2 = " create table $tqname ( qid int auto_increment primary key , qtext text , correctans varchar(255) ); ";
+$q2 = " create table $tqname ( qid int auto_increment primary key , qtext text , correctans int ); ";
 
 $tqans = $tqname."ans";
 
@@ -83,6 +84,7 @@ echo "<br>".$res3." ".$res4;
 	
 	$num = $_POST['numofque'];
 	$numopt=$_POST['numofopt'];
+
 		
 
  ?>
@@ -128,6 +130,7 @@ echo "<br>".$res3." ".$res4;
 
 
 				<?php 
+
 			}
 	 ?>
 

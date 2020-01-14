@@ -13,9 +13,9 @@
 	
 </head>
 <body>
-	<div class="container border mt-4 card shadow">
+	<div class="container border mt-4 card shadow bg-light">
 	
-<nav class="navbar navbar-expand-lg  navbar-light bg-none">
+<nav class="navbar navbar-expand-lg  navbar-light bg-none ">
   <a class="navbar-brand" href="#">
     <img src="Vexels-Office-Bulb.svg" width="30" height="30" class="d-inline-block align-top" alt="">
     WIA
@@ -26,7 +26,10 @@
   <div class="collapse navbar-collapse" id="navbarText">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <a class="nav-link" href="host_quiz_ask.php">Host quiz <span class="sr-only">(current)</span></a>
+        <a class="nav-link text-primary" href="host_quiz_ask.php">Host quiz<span class="sr-only">(current)</span></a>
+      </li>
+       <li class="nav-item active ">
+        <a class="nav-link" href="quizs.php">Quizs</a>
       </li>
       <li class="nav-item active " id="parti">
         <a class="nav-link" href="#" onclick="makebold();">Participate</a>
@@ -41,7 +44,7 @@
         <a class="nav-link" href="#">Feedback</a>
       </li>
       <li class="nav-item active ">
-        <a class="nav-link" href="delete_your_quiz.php">Delete quiz</a>
+        <a class="nav-link text-danger" href="delete_your_quiz.php">Delete/Edit quiz</a>
       </li>
 
      
@@ -49,9 +52,13 @@
     
   </div>
 
+
   </nav>
+
+  <hr>
 <div class="ml-4 mt-3 mr-5 col-5 align-top m-2 " >
 	<h2 id="shake">Login for participation</h2>
+  <hr>
 	<form action="loginvalidation.php" method = "post">
   <div class="form-group ">
     <label for="rollnumber">Roll number</label>
