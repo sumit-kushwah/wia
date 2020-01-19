@@ -7,7 +7,18 @@
 
     mysqli_select_db($con,"$db_name");
 
+
+    if($con)
+    {
+      echo "successful";
+    }
+    else
+    {
+      echo "failed";
+    }
+
     $q= "select * from quizs where qstatus=1 order by qdateadded desc";
+
 
 
     $res = mysqli_query($con,$q);
