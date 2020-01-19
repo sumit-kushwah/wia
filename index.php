@@ -116,7 +116,7 @@
  <?php 
 
 ?>
-<table class="row border ml-4 mr-4 rounded bg-info text-dark form-inline">
+<div class="row border ml-4 mr-4 rounded bg-info text-dark form-inline">
 
   <div class="col-sm">
     <h3 class="ml-4 mt-2">QUIZ_CODE</h3>
@@ -131,7 +131,7 @@
     <h3 class="ml-5 mt-2">LINK</h3>
     </div>
 
-  </table>
+  </div>
 <hr>
 
 <?php
