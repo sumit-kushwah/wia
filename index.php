@@ -128,8 +128,8 @@
        <h3 class="ml-4 mt-2">DATE_ADDED</h3>
     </th>
     <th class="col-sm mt-1">
-    <th class="ml-5 mt-2">LINK</h3>
-    </div>
+    <h3 class="ml-5 mt-2">LINK</h3>
+    </th>
 
   </table>
 <hr>
