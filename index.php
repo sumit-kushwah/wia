@@ -118,16 +118,16 @@
 ?>
 <table class="row border ml-4 mr-4 rounded bg-info text-dark form-inline">
 
-  <th class="">
+  <th class="col-sm">
     <h3 class="ml-4 mt-2">QUIZ_CODE</h3>
     </th>
-    <th class="">
+    <th class="col-sm">
        <h3 class="ml-4 mt-2">AUTHOR</h3>
     </th>
-    <th class="">
+    <th class="col-sm">
        <h3 class="ml-4 mt-2">DATE_ADDED</h3>
     </th>
-    <th class=" mt-1">
+    <th class="col-sm mt-1">
     <th class="ml-5 mt-2">LINK</h3>
     </div>
 
