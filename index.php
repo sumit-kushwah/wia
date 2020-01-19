@@ -116,7 +116,7 @@
  <?php 
 
 ?>
-<div class="row border ml-4 mr-4 rounded bg-info text-dark">
+<div class="row border ml-4 mr-4 rounded bg-info text-dark form-inline">
 
   <div class="col-sm">
     <h3 class="ml-4 mt-2">QUIZ_CODE</h3>
