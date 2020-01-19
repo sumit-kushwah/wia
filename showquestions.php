@@ -2,6 +2,8 @@
 include 'config.php';
 session_start();
 
+
+
 $con= mysqli_connect("$db_host","$db_user","$db_pass");
 
 mysqli_select_db($con,"$db_name");
@@ -17,15 +19,17 @@ mysqli_select_db($con,"$db_name");
 
 
 
-$quizname= $_SESSION['qcode'];
+$quizname=$_POST['quizcode'];
+$_SESSION['qcode']=$quizname;
 
-$qq= "select * from teacher where tcodename='$quizname' ";
+$qq= "select * from quizs where qcode='$quizname' ";
 
 $query = mysqli_query($con, $qq);
 
-$rr= mysqli_fetch_array($query);
-$timelimit = $rr['ttimelimit'];
+$rr = mysqli_fetch_array($query);
+$timelimit = $rr['qtimelimit'];
 
+$_SESSION['refreshstatus']=1;
  ?>
 
 
@@ -33,12 +37,13 @@ $timelimit = $rr['ttimelimit'];
 <html>
 <head>
 	<title>
-		home page
+		participate in quiz
 	</title>
 	<style type="text/css">
 
 	</style>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+	<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
 	<style type="text/css">
 		.upstick{
 			position: fixed;
@@ -57,7 +62,7 @@ var timerId = setInterval(function(){
   var sec = Math.floor((countdown - (min * 60 * 1000)) / 1000);  //correct
 
   if (countdown <= 0) {
-     alert("quiz finished");
+     alert("quiz finished submit your answers");
      clearInterval(timerId);
      //doSomething();
   } else {
@@ -69,14 +74,14 @@ var timerId = setInterval(function(){
 </script>
 </head>
 <body >
-	<div class="container border rounded lg">
+	
 
-		<div class=" border rounded-pill shadow p-3 mb-5 bg-white rounded " style="margin-top:30px " >
+		<div class="container border rounded-pill shadow p-3 mb-5 bg-success rounded " style="margin-top:30px " >
 			
-			<h1 class="text-center text-primary">welcome  <?php echo $_SESSION['rollno']; ?></h1>
+			<h1 class="text-center text-dark">welcome  <?php echo $_SESSION['username']; ?></h1>
 
 		</div>
-
+<div class="container border rounded-lg bg-light">
 		
 	<!-- 	
 		<div class=" text-center shadow upstick"  >
@@ -154,8 +159,8 @@ $i=1;
 	?>	
 	<br>
 	
-	<div class="text-center text-primary  " style="margin: 30px">
-		<input type="submit" name="submit" value="submit your answers" class="btn btn-primary btn-lg shadow p-3 mb-5 bg">
+	<div class="text-center text-primary  " style="margin: 10px">
+		<input type="submit" name="submit" value="submit your answers" class="btn btn-primary btn-lg btn-block shadow p-3 mb-5 bg">
 	</div>
 
 	

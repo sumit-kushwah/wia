@@ -8,22 +8,22 @@ $con= mysqli_connect("$db_host","$db_user","$db_pass");
 
 mysqli_select_db($con,"$db_name");
 
- if($con)
- {
- 	echo "connection succesful";
- }
- else
- {
- 	echo "connection failed";
- }
+//  if($con)
+//  {
+//  	echo "connection succesful";
+//  }
+//  else
+//  {
+//  	echo "connection failed";
+//  }
 
 
 
-$quizcode = $_POST['quizcode'];
-$rollno= $_POST['rollno'];
+$username = $_POST['username'];
+$password= $_POST['psw'];
 
 
-$q1= " select * from students where strollno = '$rollno' && stquizname='$quizcode' ";
+$q1= " select * from user where username = '$username' && password='$password' ";
 
 $res = mysqli_query($con,$q1);
 
@@ -31,20 +31,16 @@ $nor = mysqli_num_rows($res);
 
 if($nor ==1 )
 {
-	echo "login successful";
+	// echo "login successful";
 
-	$_SESSION['qcode']=$quizcode;
-	$_SESSION['rollno']=$rollno;
+	$_SESSION['username']=$username;
+	$_SESSION['status']=1;
 
-	header('location:showquestions.php');
-
-
-
-
+	header('location:index.php');
 }
 else
 {
-	echo "login unsuccessful as you are not registered user";
+	$_SESSION['status']=0;
+	header('location:index.php');
 }
-
- ?>
+?>

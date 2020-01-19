@@ -2,7 +2,7 @@
 --
 -- Host: localhost    Database: wia
 -- ------------------------------------------------------
--- Server version	10.4.8-MariaDB
+-- Server version 10.4.8-MariaDB
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -16,59 +16,106 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `students`
+-- Table structure for table `admin`
 --
 
-DROP TABLE IF EXISTS `students`;
+DROP TABLE IF EXISTS `admin`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `students` (
-  `stid` int(11) NOT NULL AUTO_INCREMENT,
-  `stquizname` varchar(255) DEFAULT NULL,
-  `stname` varchar(255) DEFAULT NULL,
-  `strollno` varchar(255) DEFAULT NULL,
-  `stemail` varchar(255) DEFAULT NULL,
-  `score` int(11) DEFAULT NULL,
-  PRIMARY KEY (`stid`)
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4;
+CREATE TABLE `admin` (
+  `username` varchar(255) NOT NULL,
+  `password` varchar(255) NOT NULL,
+  PRIMARY KEY (`username`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `students`
+-- Dumping data for table `admin`
 --
 
-LOCK TABLES `students` WRITE;
-/*!40000 ALTER TABLE `students` DISABLE KEYS */;
-INSERT INTO `students` VALUES (1,' sdf','Amit kushwah','17mi540','sumitkushwah1729@gmail.com',2),(2,' sdf','Amit kushwah','17mi540','sumitkushwah1729@gmail.com',2),(3,'sdf','sumit',NULL,NULL,NULL),(4,'sdf','sumit kushwah',NULL,NULL,NULL),(5,'sdf','Amit kushwah','17mi540','sumitkushwah1729@gmail.com',2),(6,'hfdksja','sumit ','dgfjahs','sumitkushwah1729@gmail.com',NULL),(7,'dfsa','Amit kushwah','17mi540','sumitkushwah1729@gmail.com',2),(8,'hsdfjsk','Amit kushwah','17mi540','sumitkushwah1729@gmail.com',2),(9,'sdsa','Shivanand','17mi540','sumitkushwah1729@gmail.com',2),(10,'abce','sumit','17mi540','sumitkushwah1729@gmail.com',2);
-/*!40000 ALTER TABLE `students` ENABLE KEYS */;
+LOCK TABLES `admin` WRITE;
+/*!40000 ALTER TABLE `admin` DISABLE KEYS */;
+/*!40000 ALTER TABLE `admin` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
--- Table structure for table `teacher`
+-- Table structure for table `quizs`
 --
 
-DROP TABLE IF EXISTS `teacher`;
+DROP TABLE IF EXISTS `quizs`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `teacher` (
-  `tid` int(11) NOT NULL AUTO_INCREMENT,
-  `tname` varchar(255) DEFAULT NULL,
-  `tcodename` varchar(255) DEFAULT NULL,
-  `tquenum` int(11) DEFAULT NULL,
-  `toptnum` int(11) DEFAULT NULL,
-  `ttimelimit` int(11) DEFAULT NULL,
-  PRIMARY KEY (`tid`)
-) ENGINE=InnoDB AUTO_INCREMENT=40 DEFAULT CHARSET=utf8mb4;
+CREATE TABLE `quizs` (
+  `qcode` varchar(255) NOT NULL,
+  `qname` text NOT NULL,
+  `numofq` int(11) NOT NULL,
+  `numofopt` int(11) NOT NULL,
+  `quser` varchar(255) DEFAULT NULL,
+  `qtimelimit` int(11) DEFAULT NULL,
+  `qstatus` int(11) DEFAULT 1,
+  `qdateadded` date DEFAULT NULL,
+  PRIMARY KEY (`qcode`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `teacher`
+-- Dumping data for table `quizs`
 --
 
-LOCK TABLES `teacher` WRITE;
-/*!40000 ALTER TABLE `teacher` DISABLE KEYS */;
-INSERT INTO `teacher` VALUES (9,'sumit','sumit',10,4,20),(10,'sumit','sumite',10,4,20),(11,'sumit','abc',10,4,20),(12,'sumit','abcd',10,4,20);
-/*!40000 ALTER TABLE `teacher` ENABLE KEYS */;
+LOCK TABLES `quizs` WRITE;
+/*!40000 ALTER TABLE `quizs` DISABLE KEYS */;
+/*!40000 ALTER TABLE `quizs` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `user`
+--
+
+DROP TABLE IF EXISTS `user`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `user` (
+  `username` varchar(255) NOT NULL,
+  `password` varchar(255) NOT NULL,
+  `userMail` text DEFAULT NULL,
+  PRIMARY KEY (`username`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `user`
+--
+
+LOCK TABLES `user` WRITE;
+/*!40000 ALTER TABLE `user` DISABLE KEYS */;
+/*!40000 ALTER TABLE `user` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `userandquiz`
+--
+
+DROP TABLE IF EXISTS `userandquiz`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `userandquiz` (
+  `username` varchar(255) DEFAULT NULL,
+  `qcode` varchar(255) DEFAULT NULL,
+  `attempt` int(11) DEFAULT NULL,
+  `dateparticipated` date DEFAULT NULL,
+  `score` int(11) DEFAULT NULL,
+  `numoque` int(11) DEFAULT NULL,
+  `timesubmitted` varchar(255) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `userandquiz`
+--
+
+LOCK TABLES `userandquiz` WRITE;
+/*!40000 ALTER TABLE `userandquiz` DISABLE KEYS */;
+/*!40000 ALTER TABLE `userandquiz` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -80,4 +127,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2020-01-11 14:08:53
+-- Dump completed on 2020-01-19  6:57:50
