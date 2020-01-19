@@ -116,22 +116,22 @@
  <?php 
 
 ?>
-<div class="row border ml-4 mr-4 rounded bg-info text-dark form-inline">
+<table class="row border ml-4 mr-4 rounded bg-info text-dark form-inline">
 
-  <div class="col-sm">
+  <th class="">
     <h3 class="ml-4 mt-2">QUIZ_CODE</h3>
-    </div>
-    <div class="col-sm">
+    </th>
+    <th class="">
        <h3 class="ml-4 mt-2">AUTHOR</h3>
-    </div>
-    <div class="col-sm">
+    </th>
+    <th class="">
        <h3 class="ml-4 mt-2">DATE_ADDED</h3>
-    </div>
-    <div class="col-sm mt-1">
-    <h3 class="ml-5 mt-2">LINK</h3>
+    </th>
+    <th class=" mt-1">
+    <th class="ml-5 mt-2">LINK</h3>
     </div>
 
-  </div>
+  </table>
 <hr>
 
 <?php
