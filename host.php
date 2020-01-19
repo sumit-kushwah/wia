@@ -70,7 +70,7 @@ session_start();
   </div>
   <div class="form-group">
     <label for="quizcode">Enter quiz code </label>
-    <input type="text" class="form-control" pattern=".{4,8}" title="length must be between 4 to 9 character" id="quizcode" name="tqname" required="please enter some quiz code" >
+    <input type="text" class="form-control" pattern="[A-Za-z]{4,9}" title="length must be between 4 to 9 character" id="quizcode" name="tqname" required="please enter some quiz code" >
   
     <?php 
 
