@@ -204,7 +204,7 @@
 <br>
 <br>
 	<nav class=" bottom text-center mb-4">
-  <head>No rights reserved every byte is </head><a href="https://en.wikipedia.org/wiki/Open-source_license">open source</a>
+  <head>No rights reserved every byte is <a href="https://en.wikipedia.org/wiki/Open-source_license">open source</a> | <a href="Aboutus.php">contact</a></head>
 </nav>
 
 <script type="text/javascript">

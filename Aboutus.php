@@ -8,10 +8,10 @@
 </head>
 <body>
 	<div class="container mt-4 ">
-		<h1 class="text-center">ABOUT US</h1>		
+		<h1 class="text-center">HELLO!</h1>		
 	</div>
 	<div class="text-center mt-4">
-		<h4>This is a web quiz application in which you can easily <a href="host_quiz_ask.php">host</a> a quiz and <a href="home_page.php">participate</a> in a quiz. <br>
+		<h4>My name is sumit kushwah <br> For any help or suggestion you can mail me at <a href="sumitkushwah1729@gmail.com">sumitkushwah1729@gmail.com</a>
 			</h4>
 	</div>
 </body>
