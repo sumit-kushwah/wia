@@ -61,6 +61,7 @@ $con= mysqli_connect("$db_host","$db_user","$db_pass");
 mysqli_select_db($con,"$db_name");
 
 if(isset($_POST['submit'])){
+	$c=0;
 	if(!empty($_POST['quizcheck'])){
 
 	$c = count($_POST['quizcheck']);
@@ -71,6 +72,7 @@ if(isset($_POST['submit'])){
 		$c=0;
 	}
 
+	// print($selected);
 	$quizcode = $_SESSION['qcode'];
 	$qans = $quizcode."ans";
 
@@ -99,16 +101,11 @@ if(isset($_POST['submit'])){
 	while ($rows = mysqli_fetch_array($query)) {
 
 
-		if ($selected[$i]%$numofopt==0) {
-			# code...
-			$correctopt=$numofopt;
-		}
-		else
-		{
-			$correctopt=$selected[$i]%$numofopt;
-		}
+			$correctopt=$rows['correctans']+($i-1)*$numofopt;
 
-		$pp =  ($rows['correctans'] == ($correctopt));
+		// echo $rows['correctans']  . $correctopt ."<br>";
+
+		$pp =  ($correctopt == ($selected[$i]));
 		if($pp)
 		{
 			$result++;

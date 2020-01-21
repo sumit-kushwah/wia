@@ -30,8 +30,11 @@ $qname= $_POST['quizcode'];
 
  		$q2="drop table $qname,$qnameans";
 
+ 		$q3= "delete from userandquiz where qcode ='$qname'";
+
  		$res = mysqli_query($con, $q);
  		$res2 =mysqli_query($con,$q2);
+ 		$res3=mysqli_query($con,$q3);
  		
  		header('location:userprofile.php');
 
