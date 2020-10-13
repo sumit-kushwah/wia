@@ -3,5 +3,5 @@
 A quiz application
 
 ### TODO
--[ ] Do firebase integration
--[ ] Make good redme file
+- [ ] Do firebase integration
+- [ ] Make good redme file
